@@ -7,6 +7,6 @@ beforeEach(() => {
     cy.get("#admin").should("be.visible")
     })
     it("Reutiliza la sesion en otra prueba", () => {
-    cy.get(".fila-producto").should("have.length", 4)
+    cy.get(".fila-producto").should("have.length", 5)
     })
 })
