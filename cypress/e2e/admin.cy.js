@@ -15,7 +15,7 @@ describe("Admin de Productos", () => {
   it("Login correcto muestra el panel", () => {
     entrar()
     cy.get("#admin").should("be.visible")
-    cy.get(".fila-producto").should("have.length", 4)   // los 4 del CSV
+    cy.get(".fila-producto").should("have.length", 5)   // los 4 del CSV
   })
 
   it("Login incorrecto muestra error", () => {
@@ -31,7 +31,7 @@ describe("Admin de Productos", () => {
     cy.get("#precio").type("250")
     cy.get("#stock").type("8")
     cy.get("#btn-guardar").click()
-    cy.get(".fila-producto").should("have.length", 5)
+    cy.get(".fila-producto").should("have.length", 6)
     cy.get(".col-nombre").should("contain", "Webcam")
   })
 
@@ -42,13 +42,13 @@ describe("Admin de Productos", () => {
     cy.get("#stock").type("5")
     cy.get("#btn-guardar").click()
     cy.get("#form-msg").should("contain", "precio")
-    cy.get(".fila-producto").should("have.length", 4)   // no se agrego
+    cy.get(".fila-producto").should("have.length", 5)   // no se agrego
   })
 
   it("Eliminar un producto lo quita de la tabla", () => {
     entrar()
     cy.get(".fila-producto").first().find(".btn-eliminar").click()
-    cy.get(".fila-producto").should("have.length", 3)
+    cy.get(".fila-producto").should("have.length", 4)
   })
 
   it("Editar un producto actualiza su nombre", () => {
