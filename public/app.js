@@ -21,7 +21,8 @@ function login() {
 
   localStorage.setItem("sesion", "activa") //===========
 
-  if (u === "admin" && c === "1234") {           // login de demostracion
+  if (u === "admin" && c === "1234") {
+    localStorage.setItem("sesion", "activa") // solo si la clave es correcta
     document.getElementById("login").classList.add("oculto");
     document.getElementById("admin").classList.remove("oculto");
     msg.textContent = "";
