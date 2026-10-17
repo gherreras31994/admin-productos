@@ -20,9 +20,8 @@ function login() {
   const c = document.getElementById("clave").value.trim();
   const msg = document.getElementById("login-msg");
 
-  localStorage.setItem("sesion", "activa") //===========
-
   if (u === "admin" && c === "1234") {           // login de demostracion
+    localStorage.setItem("sesion", "activa");
     document.getElementById("login").classList.add("oculto");
     document.getElementById("admin").classList.remove("oculto");
     msg.textContent = "";
