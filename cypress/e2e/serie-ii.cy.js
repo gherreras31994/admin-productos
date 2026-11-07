@@ -29,7 +29,8 @@ describe("Serie II - Examen final", () => {
     cy.get("#stock").type("8")
     cy.get("#btn-guardar").click()
 
-    cy.get(".fila-producto").should("have.length", 6)
+    // Falla intencional para demostrar CI rojo: 5 iniciales + 1 nuevo son 6.
+    cy.get(".fila-producto").should("have.length", 7)
     cy.contains("#tabla-productos .fila-producto", "Webcam Examen")
       .should("be.visible")
       .within(() => {
